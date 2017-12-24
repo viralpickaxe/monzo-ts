@@ -1,6 +1,6 @@
 {
   "name": "monzo-ts",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Typed Monzo API Wrapper",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -10,11 +10,12 @@
     "prebuild": "npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
-    "test": "mocha --colors --require ts-node/register test/**/*.spec.ts"
+    "test": "mocha --colors --require ts-node/register test/**/*.spec.ts",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://viralpickaxe@github.com/viralpickaxe/monzo-ts.git"
+    "url": "https://github.com/viralpickaxe/monzo-ts.git"
   },
   "keywords": [
     "monzo",
@@ -39,6 +40,7 @@
     "mocha": "^4.0.1",
     "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "semantic-release": "^11.0.2"
   }
 }
