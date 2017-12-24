@@ -7,10 +7,11 @@ script: npm run test
 jobs:
   include:
     - stage: npm release
-      node_js: "7"
+      node_js: "8"
       script: echo "Deploying to npm ..."
       deploy:
         provider: npm
+        tag: next
         email: jamie@iamjamiedavies.com
         api_key:
           secure: XOfugHbG+0ZCRs5ixtXC9tD3/HcbWOqcbyDmtRXPvUp3/2HEZz8QT+3ittpGaVIU8eBeTC3uUPGdwaKnC3PM/lt69QiivI3peo94Az3mIJ4XpWgK8TrqxwiRP8b5BG8zL1u/z9wlWLkqQuzGHguXe/vRj90WYx6g0BVSW17mzSf5Uyx4HdHgcg0X+sRnfK5xzME9ELHH/GztUF5NHIxI2e82MgcNu/GWWN/Ji7GnMNYrt/Y0+Pwt9fLeSCzqY/tO5ArSEmhaLMFsnolLJMSysCq/phehqQvxO0MndVxtR7CuKPeeRrpZIR9vKBHLKR3V4e5rgf9MnaGwIIPFzgkpmv5DrdhIQ3A/crNK5B5z10ZNz2VlF5Bp6PblpDb4dg0oGR+oppPXExAaR325e2CTr4Pe6VDpgMmT6SxTrmiIi3C7g/bncKYOJ8H3bnCdyaDSSw+LjTOlah5QZzK2jCeGYL73xqV1q5w9UyBpbn20lUHzcopnom/zKNNEnPpLMtA74RwlZnFE4HhrH1hj+DiB6oOKVswUr6F5uZ2VWo3nFt9j1Xb700qLgeOa7o+ds33rm71Kr2jchYMNBfbbwM3BPoY5gaT6KXh+Cek075UtEPIy8dpwQeNYbFRsppZvHq2vZZDghYOzg4mE/PtU6MlkNZTOIFDShtRRbytG7vnQQKo=
