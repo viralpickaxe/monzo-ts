@@ -1,0 +1,137 @@
+{
+  "rules": {
+    "align": [
+      true,
+      "arguments",
+      "parameters",
+      "statments"
+    ],
+    "array-type": [
+      true,
+      "array"
+    ],
+    "ban": [
+      true,
+      ["fdescribe"],
+      ["fit"],
+      ["window"],
+      ["document"],
+      ["event"],
+      ["debugger"],
+      ["toString"],
+      ["it", "only", "Don't keep mocha focus methods"],
+      ["describe", "only", "Don't keep mocha focus methods"]
+    ],
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "curly": true,
+    "eofline": true,
+    "forin": false,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "interface-name": [ false ],
+    "jsdoc-format": true,
+    "max-line-length": [
+      true,
+      100
+    ],
+    "member-access": [
+      true,
+      "check-constructor"
+    ],
+    "member-ordering": [
+      true,
+      "public-before-private",
+      "static-before-instance",
+      "variables-before-functions"
+    ],
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": [ true ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-inferrable-types": [ false ],
+    "no-internal-module": true,
+    "no-null-keyword": false,
+    "no-require-imports": true,
+    "no-shadowed-variable": true,
+    "no-trailing-whitespace": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": false,
+    "no-var-keyword": true,
+    "no-var-requires": true,
+    "object-literal-sort-keys": false,
+    "one-line": [
+      true,
+      "check-catch",
+      "check-else",
+      "check-open-brace",
+      "check-whitespace"
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "radix": true,
+    "semicolon": [ true, "always" ],
+    "switch-default": true,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "typedef": [
+      true,
+      "call-signature",
+      "property-declaration"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameters": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "ban-keywords"
+    ],
+    "whitespace": [
+      true,
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type",
+      "check-typecast",
+      "check-branch",
+      "check-preblock"
+    ],
+    "no-invalid-this": [
+      true,
+      "check-function-in-method"
+    ],
+    "prefer-const": true,
+    "arrow-return-shorthand": true,
+    "import-spacing": true
+  }
+}

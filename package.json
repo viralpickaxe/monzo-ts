@@ -1,0 +1,44 @@
+{
+  "name": "monzo-ts",
+  "version": "1.0.0",
+  "description": "Typed Monzo API Wrapper",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "lint": "tslint {src,test}/**/*.ts",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "mocha --colors --require ts-node/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://viralpickaxe@github.com/viralpickaxe/monzo-ts.git"
+  },
+  "keywords": [
+    "monzo",
+    "wrapper",
+    "api",
+    "banking",
+    "fintech",
+    "typescript",
+    "library",
+    "module"
+  ],
+  "author": "Jamie Davies <jamie@iamjamiedavies.com> (iamjamiedavies.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viralpickaxe/monzo-ts/issues"
+  },
+  "homepage": "https://github.com/viralpickaxe/monzo-ts#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.45",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}
