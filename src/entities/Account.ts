@@ -8,4 +8,6 @@ export interface Account {
   created: Date;
   description: string;
   type: AccountType;
+  account_number?: string;
+  sort_code?: string;
 }
