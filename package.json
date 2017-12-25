@@ -13,7 +13,7 @@
     "test": "mocha --colors --require ts-node/register test/**/*.spec.ts",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "prepublish": "npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
