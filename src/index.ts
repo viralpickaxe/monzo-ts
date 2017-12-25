@@ -6,5 +6,5 @@ export * from './entities/OAuth';
 
 export * from './lib/Currency';
 
-// export * from './wrappers/MonzoDataAPI';
+export * from './wrappers/MonzoDataAPI';
 export * from './wrappers/MonzoOAuthAPI';

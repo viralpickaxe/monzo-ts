@@ -1,14 +1,15 @@
 import axios from 'axios';
 import { OAuthTokens, OAuthWhoAmI } from '../entities/OAuth';
+import { MonzoAPI } from './MonzoAPI';
 
-export class MonzoOAuthAPI {
-  private baseUrl = 'https://api.monzo.com';
-
+export class MonzoOAuthAPI extends MonzoAPI {
   public constructor(
     private clientId: string,
     private clientSecret: string,
     private redirectUrl: string,
   ) {
+    super();
+
     if (clientId === undefined || clientId.length === 0) {
       throw new Error('No clientId provided');
     } else if (clientSecret === undefined || clientSecret.length === 0) {
@@ -19,7 +20,7 @@ export class MonzoOAuthAPI {
   }
 
   public generateAuthUrl(stateToken?: string): string {
-    return `https://auth.getmondo.co.uk/?` +
+    return `https://auth.monzo.com/?` +
       `client_id=${this.clientId}&` +
       `redirect_uri=${this.redirectUrl}&` +
       `response_type=code&` +
