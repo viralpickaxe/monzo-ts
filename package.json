@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/viralpickaxe/monzo-ts#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/chai": "^4.0.10",
     "@types/mocha": "^2.2.45",
     "chai": "^4.1.2",
@@ -42,5 +43,8 @@
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
     "semantic-release": "^11.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.17.1"
   }
 }
