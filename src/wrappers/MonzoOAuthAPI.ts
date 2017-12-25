@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { OAuthTokens, OAuthWhoAmI } from '../entities/OAuth';
 import { MonzoAPI } from './MonzoAPI';
+import { stringify } from 'qs';
 
 export class MonzoOAuthAPI extends MonzoAPI {
   public constructor(
@@ -22,29 +23,45 @@ export class MonzoOAuthAPI extends MonzoAPI {
   public generateAuthUrl(stateToken?: string): string {
     return `https://auth.monzo.com/?` +
       `client_id=${this.clientId}&` +
-      `redirect_uri=${this.redirectUrl}&` +
+      `redirect_uri=${encodeURIComponent(this.redirectUrl)}&` +
       `response_type=code&` +
       `state=${stateToken || ''}`;
   }
 
   public async exchangeCode(code: string): Promise<OAuthTokens> {
-    const response = await axios.post<OAuthTokens>(`${this.baseUrl}/oauth2/token`, {
-      grant_type: 'authorization_code',
-      client_id: this.clientId,
-      client_secret: this.clientSecret,
-      redirect_uri: this.redirectUrl,
-      code,
-    });
+    const response = await axios.post<OAuthTokens>(
+      `${this.baseUrl}/oauth2/token`,
+      stringify({
+        grant_type: 'authorization_code',
+        client_id: this.clientId,
+        client_secret: this.clientSecret,
+        redirect_uri: this.redirectUrl,
+        code,
+      }),
+      {
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded',
+        },
+      },
+    );
     return response.data;
   }
 
   public async refreshToken(refreshToken: string): Promise<OAuthTokens> {
-    const response = await axios.post<OAuthTokens>(`${this.baseUrl}/oauth2/token`, {
-      grant_type: 'refresh_token',
-      client_id: this.clientId,
-      client_secret: this.clientSecret,
-      refresh_token: refreshToken,
-    });
+    const response = await axios.post<OAuthTokens>(
+      `${this.baseUrl}/oauth2/token`,
+      stringify({
+        grant_type: 'refresh_token',
+        client_id: this.clientId,
+        client_secret: this.clientSecret,
+        refresh_token: refreshToken,
+      }),
+      {
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded',
+        },
+      },
+    );
     return response.data;
   }
 

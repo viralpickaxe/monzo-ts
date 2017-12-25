@@ -48,7 +48,7 @@ describe('MonzoOAuthAPI', () => {
     it('should genrate an auth url with correct params (and no state)', () => {
       const expectedUrl = `https://auth.monzo.com/?` +
       `client_id=${TEST_CLIENT_ID}&` +
-      `redirect_uri=${TEST_REDIRECT_URL}&` +
+      `redirect_uri=${encodeURIComponent(TEST_REDIRECT_URL)}&` +
       `response_type=code&` +
       `state=`;
 
@@ -58,7 +58,7 @@ describe('MonzoOAuthAPI', () => {
     it('should genrate an auth url with correct params (state)', () => {
       const expectedUrl = `https://auth.monzo.com/?` +
       `client_id=${TEST_CLIENT_ID}&` +
-      `redirect_uri=${TEST_REDIRECT_URL}&` +
+      `redirect_uri=${encodeURIComponent(TEST_REDIRECT_URL)}&` +
       `response_type=code&` +
       `state=${TEST_STATE}`;
 
