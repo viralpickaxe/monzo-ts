@@ -88,7 +88,7 @@ export class MonzoDataAPI extends MonzoAPI {
 
   public async getBalance(
     accountId: string,
-  ): Promise<Balance[]> {
+  ): Promise<Balance> {
     const response = await axios.get(`${this.baseUrl}/balance`, {
       headers: {
         'Authorization': `Bearer ${this.accessToken}`,
