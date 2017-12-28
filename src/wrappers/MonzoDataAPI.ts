@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Account } from '../entities/Account';
 import { Transaction } from '../entities/Transaction';
+import { Balance } from '../entities/Balance';
 import { MonzoAPI } from './MonzoAPI';
 
 export class MonzoDataAPI extends MonzoAPI {
@@ -83,5 +84,22 @@ export class MonzoDataAPI extends MonzoAPI {
         } : transaction.merchant,
       };
     });
+  }
+
+  public async getBalance(
+    accountId: string,
+  ): Promise<Balance[]> {
+    const response = await axios.get(`${this.baseUrl}/balance`, {
+      headers: {
+        'Authorization': `Bearer ${this.accessToken}`,
+      },
+      params: {
+        account_id: accountId,
+      },
+    });
+    return {
+      ...response.data,
+      account_id: accountId,
+    };
   }
 }
